@@ -21,6 +21,6 @@ export const socialLinks = [
   },
   {
     icon: FaGithub,
-    link: "https://github.com/dev.mulkalwar",
+    link: "https://github.com/devmulkalwar",
   },
 ];
