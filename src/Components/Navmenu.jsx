@@ -1,7 +1,7 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
-const Navmenu = ({classes}) => {
+const Navmenu = ({ classes }) => {
   const routes = [
     {
       name: "Home",
@@ -28,7 +28,16 @@ const Navmenu = ({classes}) => {
   const renderLinks = (routes) => {
     return routes.map((route, index) => (
       <li key={index}>
-        <Link to={route.to}>{route.name}</Link>
+        <NavLink
+          to={route.to}
+          className={({ isActive }) =>
+            `font-medium transition duration-300 ease-in-out 
+    hover:text-primary   mx-1
+    ${isActive ? "text-primary " : "text-base-content"}`
+          }
+        >
+          {route.name}
+        </NavLink>
       </li>
     ));
   };
