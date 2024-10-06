@@ -3,6 +3,7 @@ import profileImage from '../assets/Images/mainImage.png'; // Your profile image
 import { FaHtml5, FaCss3Alt, FaJsSquare, FaReact, FaJava, FaPhp } from 'react-icons/fa'; // Import existing icons
 import { SiBootstrap, SiGit, SiGithub, SiExpress, SiNodedotjs, SiMongodb, SiFirebase } from 'react-icons/si'; // Ensure these icons exist
 import { Link } from 'react-router-dom';
+import {skills} from "../data/skills.js"
 
 const About = () => {
   return (
@@ -39,50 +40,20 @@ const About = () => {
 
       {/* Skills Section */}
       <div className='flex flex-col justify-center items-center'>
-        <h2 className="text-3xl font-bold text-primary mt-12">Skills</h2>
-        <div className="grid grid-cols-4 lg:grid-cols-5 justify-center items-center gap-8 mt-6">
-          {/* Skill Icons */}
-          <div className="flex place-self-center items-center justify-center w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 text-white bg-orange-600 rounded-full shadow-lg">
-            <FaHtml5 className="text-xl md:text-2xl lg:text-3xl" />
+      <h2 className="text-3xl font-bold text-primary mt-12">Skills</h2>
+      <div className="grid grid-cols-4 lg:grid-cols-5 justify-center items-center gap-8 mt-6">
+        {skills.map((skill, index) => (
+          <div
+            key={index}
+            className={`flex place-self-center items-center justify-center w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 text-white ${skill.bgColor} rounded-full shadow-lg`}
+          >
+            <div className="text-xl md:text-2xl lg:text-3xl">
+           < skill.icon className="h-6 w-6"/>
+            </div>
           </div>
-          <div className="flex place-self-center items-center justify-center w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 text-white bg-blue-600 rounded-full shadow-lg">
-            <FaCss3Alt className="text-xl md:text-2xl lg:text-3xl" />
-          </div>
-          <div className="flex place-self-center items-center justify-center w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 text-white bg-yellow-500 rounded-full shadow-lg">
-            <FaJsSquare className="text-xl md:text-2xl lg:text-3xl" />
-          </div>
-          <div className="flex place-self-center items-center justify-center w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 text-white bg-cyan-500 rounded-full shadow-lg">
-            <FaReact className="text-xl md:text-2xl lg:text-3xl" />
-          </div>
-          <div className="flex place-self-center items-center justify-center w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 text-white bg-purple-600 rounded-full shadow-lg">
-            <SiBootstrap className="text-xl md:text-2xl lg:text-3xl" />
-          </div>
-          <div className="flex place-self-center items-center justify-center w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 text-white bg-gray-600 rounded-full shadow-lg">
-            <SiGit className="text-xl md:text-2xl lg:text-3xl" />
-          </div>
-          <div className="flex place-self-center items-center justify-center w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 text-white bg-gray-800 rounded-full shadow-lg">
-            <SiGithub className="text-xl md:text-2xl lg:text-3xl" />
-          </div>
-          <div className="flex place-self-center items-center justify-center w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 text-white bg-red-600 rounded-full shadow-lg">
-            <FaJava className="text-xl md:text-2xl lg:text-3xl" />
-          </div>
-          <div className="flex place-self-center items-center justify-center w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 text-white bg-green-600 rounded-full shadow-lg">
-            <SiExpress className="text-xl md:text-2xl lg:text-3xl" />
-          </div>
-          <div className="flex place-self-center items-center justify-center w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 text-white bg-green-800 rounded-full shadow-lg">
-            <SiNodedotjs className="text-xl md:text-2xl lg:text-3xl" />
-          </div>
-          <div className="flex place-self-center items-center justify-center w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 text-white bg-green-500 rounded-full shadow-lg">
-            <SiMongodb className="text-xl md:text-2xl lg:text-3xl" />
-          </div>
-          <div className="flex place-self-center items-center justify-center w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 text-white bg-yellow-500 rounded-full shadow-lg">
-            <SiFirebase className="text-xl md:text-2xl lg:text-3xl" />
-          </div>
-          <div className="flex place-self-center items-center justify-center w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 text-white bg-purple-500 rounded-full shadow-lg">
-            <FaPhp className="text-xl md:text-2xl lg:text-3xl" />
-          </div>
-        </div>
+        ))}
       </div>
+    </div>
     </div>
   );
 };

@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import emailjs from "emailjs-com"; // Import EmailJS
 
 const Contact = () => {
+  const form = useRef();
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -17,25 +18,32 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", formData, "YOUR_USER_ID")
-      .then((response) => {
-        console.log("Message sent successfully!", response.status, response.text);
-        alert("Message sent successfully!");
-        setFormData({ firstName: "", lastName: "", email: "", message: "" }); // Reset the form
-      })
-      .catch((err) => {
-        console.error("Error sending message:", err);
-        alert("Error sending message. Please try again later.");
-      });
+    emailjs
+      .sendForm(
+        import.meta.env.VITE_EMAIL_SERVICE_ID,
+        import.meta.env.VITE_EMAIL_TEMPLATE_ID,
+        form.current,
+        {
+          publicKey: import.meta.env.VITE_EMAIL_PUBLIC_KEY,
+        }
+      )
+      .then(
+        () => {
+          alert("SUCCESS!");
+        },
+        (error) => {
+          alert("FAILED...", error.text);
+        }
+      );
   };
 
   return (
     <div className="flex flex-grow items-center justify-center">
       <div className="bg-base-300 max-w-lg w-full p-8 rounded-lg shadow-lg my-4 mx-4">
         <h1 className="text-3xl md:text-4xl font-bold text-primary text-center mb-6">
-          Contact 
+          Contact
         </h1>
-        <form onSubmit={handleSubmit} className="space-y-6">
+        <form ref={form} onSubmit={handleSubmit} className="space-y-6">
           <div className="flex flex-col md:flex-row md:gap-4 mb-4">
             {/* First Name */}
             <div className="form-control w-full mb-4 md:mb-0">
@@ -49,7 +57,7 @@ const Contact = () => {
                 onChange={handleChange}
                 required
                 className="input input-bordered focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
-                placeholder="Your First Name"
+                placeholder="First Name"
               />
             </div>
 
@@ -65,7 +73,7 @@ const Contact = () => {
                 onChange={handleChange}
                 required
                 className="input input-bordered focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
-                placeholder="Your Last Name"
+                placeholder="Last Name"
               />
             </div>
           </div>
@@ -103,8 +111,8 @@ const Contact = () => {
           </div>
 
           {/* Submit Button */}
-          <button 
-            type="submit" 
+          <button
+            type="submit"
             className="btn btn-primary w-full hover:scale-105 transform transition-transform duration-200 ease-in-out"
           >
             Send Message
