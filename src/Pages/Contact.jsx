@@ -31,6 +31,8 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    emailjs.init(import.meta.env.VITE_EMAIL_PRIVATE_KEY);
+    
     emailjs
       .sendForm(
         import.meta.env.VITE_EMAIL_SERVICE_ID,
