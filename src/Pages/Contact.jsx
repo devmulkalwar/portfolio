@@ -2,7 +2,6 @@ import React, { useRef, useState } from "react";
 import emailjs from "emailjs-com"; // Import EmailJS
 import { toast } from "react-toastify";
 
-
 const Contact = () => {
   const form = useRef();
   const [formData, setFormData] = useState({
@@ -17,31 +16,17 @@ const Contact = () => {
     setFormData((prevData) => ({ ...prevData, [name]: value }));
   };
 
-  const handleToast = (message , type) => {
-    if (type === "success") {
-      toast.success(message, {
-        position: "top-center",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-      });
-    }
-    if (type === "error") {
-      toast.error(message, {
-        position: "top-center",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-      });
-    }
-    
-  }
+  const handleToast = (message, type) => {
+    toast[type](message, {
+      position: "top-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -51,31 +36,34 @@ const Contact = () => {
         import.meta.env.VITE_EMAIL_SERVICE_ID,
         import.meta.env.VITE_EMAIL_TEMPLATE_ID,
         form.current,
-        import.meta.env.VITE_EMAIL_PUBLIC_KEY // Passing public key directly
+        import.meta.env.VITE_EMAIL_PUBLIC_KEY // Corrected to use public key
       )
       .then(
         () => {
           const successMessage = "Your message has been sent successfully.";
           handleToast(successMessage, "success");
+          // Reset form fields
           setFormData({
             firstName: "",
             lastName: "",
             email: "",
             message: "",
-          })
+          });
         },
         (error) => {
           const errorMessage = error?.text || "Error sending message";
           handleToast(errorMessage, "error");
+          // Optional: Reset form fields even on error
           setFormData({
             firstName: "",
             lastName: "",
             email: "",
             message: "",
-          })
+          });
         }
       );
   };
+
   return (
     <div className="flex flex-grow items-center justify-center">
       <div className="bg-base-300 max-w-lg w-full p-8 rounded-lg shadow-lg my-4 mx-4">
