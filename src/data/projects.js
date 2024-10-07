@@ -1,56 +1,23 @@
+import matrixImg from "../assets/Images/matrixSolverImage.png";
+import rockPaperImg from "../assets/Images/rockPaperImage.png";
 export const projects = [
+  
   {
-    title: "Personal Portfolio",
+    title: "Matrix Solver",
     description:
-      "A personal portfolio website to showcase my projects and skills.",
-    image: "https://via.placeholder.com/300", // Replace with your project image URL
-    liveLink: "https://example.com/portfolio",
-    repoLink: "https://github.com/username/portfolio",
-    tags: ["html","css","js"]
+      "Matrix Solver is a web application created using HTML, CSS, and JavaScript that enables users to perform various operations on matrices.",
+    image: matrixImg, 
+    liveLink: "https://devmulkalwar.github.io/matrixcalculator/",
+    repoLink: "https://github.com/devmulkalwar/matrixcalculator",
+    tags: ["html", "css", "js"],
   },
   {
-    title: "E-commerce Store",
+    title: "Rock Paper Scissors",
     description:
-      "An e-commerce web application featuring product listings and a shopping cart.",
-    image: "https://via.placeholder.com/300", // Replace with your project image URL
-    liveLink: "https://example.com/ecommerce",
-    repoLink: "https://github.com/username/ecommerce-store",
-    tags: ["html","css","js"]
-  },
-  {
-    title: "Weather App",
-    description:
-      "A weather application that fetches data from a weather API to display current weather conditions.",
-    image: "https://via.placeholder.com/300", // Replace with your project image URL
-    liveLink: "https://example.com/weather-app",
-    repoLink: "https://github.com/username/weather-app",
-    tags: ["html","css","js"]
-  },
-  {
-    title: "Blog Platform",
-    description:
-      "A blogging platform where users can create, read, update, and delete blog posts.",
-    image: "https://via.placeholder.com/300", // Replace with your project image URL
-    liveLink: "https://example.com/blog-platform",
-    repoLink: "https://github.com/username/blog-platform",
-    tags: ["html","css","js"]
-  },
-  {
-    title: "Task Manager",
-    description:
-      "A task management application that helps users keep track of their tasks and to-do lists.",
-    image: "https://via.placeholder.com/300", // Replace with your project image URL
-    liveLink: "https://example.com/task-manager",
-    repoLink: "https://github.com/username/task-manager",
-    tags: ["html","css","js"]
-  },
-  {
-    title: "Chat Application",
-    description:
-      "A real-time chat application using WebSocket for instant messaging.",
-    image: "https://via.placeholder.com/300", // Replace with your project image URL
-    liveLink: "https://example.com/chat-app",
-    repoLink: "https://github.com/username/chat-app",
-    tags: ["html","css","js"]
+      "a beginner-friendly project that brings the classic game to life with the simplicity of HTML, CSS, and JavaScript.",
+    image: rockPaperImg, 
+    liveLink: "https://devmulkalwar.github.io/rock-paper-scissors/",
+    repoLink: "https://github.com/devmulkalwar/rock-paper-scissors",
+    tags: ["html", "css", "js"],
   },
 ];
