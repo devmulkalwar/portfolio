@@ -7,9 +7,9 @@ import About from "./Pages/About.jsx";
 import Contact from "./Pages/Contact.jsx";
 import Projects from "./Pages/Projects.jsx";
 import Error from "./Pages/Error.jsx";
-import Resume from "./Pages/Resume.jsx";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Certificates from "./Pages/Certificates.jsx";
 
 const router = createBrowserRouter([
   {
@@ -21,7 +21,7 @@ const router = createBrowserRouter([
       { path: "/about", element: <About /> },
       { path: "/contact", element: <Contact /> },
       { path: "/projects", element: <Projects /> },
-      { path: "/resume", element: <Resume /> },
+      { path: "/certificates", element: <Certificates /> },
     ],
   },
 ]);

@@ -1,6 +1,13 @@
-import React from 'react';
+import React from "react";
 
-const ProjectCard = ({ title, description, image, liveLink, repoLink }) => {
+const ProjectCard = ({
+  title,
+  description,
+  image,
+  liveLink,
+  repoLink,
+  tags,
+}) => {
   return (
     <div className="card w-full bg-base-300 shadow-xl hover:shadow-2xl transition-shadow duration-300">
       <figure>
@@ -9,11 +16,31 @@ const ProjectCard = ({ title, description, image, liveLink, repoLink }) => {
       <div className="card-body">
         <h2 className="card-title text-primary">{title}</h2>
         <p>{description}</p>
-        <div className="card-actions justify-between mt-4">
-          <a href={liveLink} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
+        <div className="flex flex-wrap gap-2">
+          {tags.map((tag) => (
+            <span
+              key={tag}
+              className="badge badge-primary rounded-md border border-primary text-xl p-3"
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
+        <div className="card-actions flex-nowrap justify-between mt-4">
+          <a
+            href={liveLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-primary"
+          >
             Live Demo
           </a>
-          <a href={repoLink} target="_blank" rel="noopener noreferrer" className="btn btn-outline btn-success">
+          <a
+            href={repoLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-outline btn-success"
+          >
             View Code
           </a>
         </div>

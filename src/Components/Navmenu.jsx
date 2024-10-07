@@ -20,8 +20,8 @@ const Navmenu = ({ classes }) => {
       to: "/contact",
     },
     {
-      name: "Resume",
-      to: "/resume",
+      name: "Certificates",
+      to: "/certificates",
     },
   ];
 

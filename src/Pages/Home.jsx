@@ -1,6 +1,7 @@
 import React from "react";
 import mainImage from "../assets/Images/mainImage.png";
 import { Link } from "react-router-dom";
+import ResumeButton from "../Components/ResumeButton";
 const Home = () => {
   return (
     <div className="flex flex-grow bg-base-200 w-full">
@@ -19,12 +20,7 @@ const Home = () => {
             >
               Get in touch
             </Link>
-            <Link
-              to="/resume"
-              className="btn btn-outline btn-primary shadow-md hover:scale-105 transition-transform"
-            >
-              Resume
-            </Link>
+           <ResumeButton styles="btn btn-outline btn-success hover:scale-105 transition-transform" />
           </div>
         </div>
       </div>

@@ -2,6 +2,8 @@ import React from 'react';
 import Header from './Components/Header';
 import Footer from './Components/Footer';
 import { Outlet } from 'react-router-dom';
+import { toast, ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
 
@@ -13,6 +15,7 @@ function App() {
         <Outlet />
       </main>
      <Footer/>
+     <ToastContainer />
     </div>
   );
 }

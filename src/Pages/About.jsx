@@ -4,6 +4,7 @@ import { FaHtml5, FaCss3Alt, FaJsSquare, FaReact, FaJava, FaPhp } from 'react-ic
 import { SiBootstrap, SiGit, SiGithub, SiExpress, SiNodedotjs, SiMongodb, SiFirebase } from 'react-icons/si'; // Ensure these icons exist
 import { Link } from 'react-router-dom';
 import {skills} from "../data/skills.js"
+import ResumeButton from '../Components/ResumeButton.jsx';
 
 const About = () => {
   return (
@@ -18,16 +19,11 @@ const About = () => {
         <div className="w-full lg:w-1/2 lg:pl-8">
           <h1 className="text-5xl font-bold text-primary">Dev Mulkalwar</h1>
           <h2 className="text-3xl text-success mt-2">Web Developer</h2>
-          <p className="py-6 text-base-content leading-relaxed">
-            I am a passionate web developer specializing in creating modern and responsive web applications. With a strong background in front-end technologies and a love for crafting user-friendly experiences, I thrive on transforming ideas into reality.
+          <p className="py-6 text-base-content text-justify leading-relaxed">
+          I am a passionate MCA student and web developer specializing in creating modern and responsive web applications. With a strong background in both front-end and back-end technologies, I thrive on transforming innovative ideas into reality. My academic journey has equipped me with a solid understanding of software development principles, and I am committed to delivering high-quality solutions that enhance user experiences.
           </p>
           <div className="flex gap-4 mt-6">
-            <Link
-              to="/resume"
-              className="btn btn-primary shadow-lg hover:scale-105 transition-transform"
-            >
-              Download Resume
-            </Link>
+           <ResumeButton styles="btn btn-primary shadow-lg hover:scale-105 transition-transform"/>
             <Link
               to="/contact"
               className="btn btn-outline btn-success hover:scale-105 transition-transform"
@@ -48,7 +44,7 @@ const About = () => {
             className={`flex place-self-center items-center justify-center w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 text-white ${skill.bgColor} rounded-full shadow-lg`}
           >
             <div className="text-xl md:text-2xl lg:text-3xl">
-           < skill.icon className="h-6 w-6"/>
+           < skill.icon className="h-6 w-6 md:h-8 md:w-8 lg:h-10 lg:w-10"/>
             </div>
           </div>
         ))}

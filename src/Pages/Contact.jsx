@@ -1,5 +1,7 @@
 import React, { useRef, useState } from "react";
 import emailjs from "emailjs-com"; // Import EmailJS
+import { toast } from "react-toastify";
+
 
 const Contact = () => {
   const form = useRef();
@@ -15,6 +17,32 @@ const Contact = () => {
     setFormData((prevData) => ({ ...prevData, [name]: value }));
   };
 
+  const handleToast = (message , type) => {
+    if (type === "success") {
+      toast.success(message, {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+    }
+    if (type === "error") {
+      toast.error(message, {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+    }
+    
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -23,20 +51,31 @@ const Contact = () => {
         import.meta.env.VITE_EMAIL_SERVICE_ID,
         import.meta.env.VITE_EMAIL_TEMPLATE_ID,
         form.current,
-        {
-          publicKey: import.meta.env.VITE_EMAIL_PUBLIC_KEY,
-        }
+        import.meta.env.VITE_EMAIL_PUBLIC_KEY // Passing public key directly
       )
       .then(
         () => {
-          alert("SUCCESS!");
+          const successMessage = "Your message has been sent successfully.";
+          handleToast(successMessage, "success");
+          setFormData({
+            firstName: "",
+            lastName: "",
+            email: "",
+            message: "",
+          })
         },
         (error) => {
-          alert("FAILED...", error.text);
+          const errorMessage = error?.text || "Error sending message";
+          handleToast(errorMessage, "error");
+          setFormData({
+            firstName: "",
+            lastName: "",
+            email: "",
+            message: "",
+          })
         }
       );
   };
-
   return (
     <div className="flex flex-grow items-center justify-center">
       <div className="bg-base-300 max-w-lg w-full p-8 rounded-lg shadow-lg my-4 mx-4">

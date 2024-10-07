@@ -6,6 +6,7 @@ export const projects = [
     image: "https://via.placeholder.com/300", // Replace with your project image URL
     liveLink: "https://example.com/portfolio",
     repoLink: "https://github.com/username/portfolio",
+    tags: ["html","css","js"]
   },
   {
     title: "E-commerce Store",
@@ -14,6 +15,7 @@ export const projects = [
     image: "https://via.placeholder.com/300", // Replace with your project image URL
     liveLink: "https://example.com/ecommerce",
     repoLink: "https://github.com/username/ecommerce-store",
+    tags: ["html","css","js"]
   },
   {
     title: "Weather App",
@@ -22,6 +24,7 @@ export const projects = [
     image: "https://via.placeholder.com/300", // Replace with your project image URL
     liveLink: "https://example.com/weather-app",
     repoLink: "https://github.com/username/weather-app",
+    tags: ["html","css","js"]
   },
   {
     title: "Blog Platform",
@@ -30,6 +33,7 @@ export const projects = [
     image: "https://via.placeholder.com/300", // Replace with your project image URL
     liveLink: "https://example.com/blog-platform",
     repoLink: "https://github.com/username/blog-platform",
+    tags: ["html","css","js"]
   },
   {
     title: "Task Manager",
@@ -38,6 +42,7 @@ export const projects = [
     image: "https://via.placeholder.com/300", // Replace with your project image URL
     liveLink: "https://example.com/task-manager",
     repoLink: "https://github.com/username/task-manager",
+    tags: ["html","css","js"]
   },
   {
     title: "Chat Application",
@@ -46,5 +51,6 @@ export const projects = [
     image: "https://via.placeholder.com/300", // Replace with your project image URL
     liveLink: "https://example.com/chat-app",
     repoLink: "https://github.com/username/chat-app",
+    tags: ["html","css","js"]
   },
 ];
