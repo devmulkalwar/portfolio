@@ -3,10 +3,10 @@ import { socialLinks } from "../data/socialLinks"; // Make sure socialLinks is p
 
 const Footer = () => {
   return (
-    <div className="flex flex-col w-full py-12 bg-gradient-to-r from-base-300 to-base-200">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+    <div className="flex flex-col w-full py-4 bg-gradient-to-r from-base-300 to-base-200">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center justify-center items-center">
         {/* Logo Section */}
-        <div className="flex justify-center ">
+        <div className="flex justify-center items-center ">
           <Link
             to="/"
             className="btn btn-ghost text-xl font-bold text-base-content"
@@ -16,7 +16,7 @@ const Footer = () => {
         </div>
 
         {/* Navigation Links */}
-        <div className="flex flex-col md:flex-row justify-center gap-4">
+        <div className="flex flex-col gap-4 md:flex-row justify-center ">
           <Link
             to="/about"
             className="link link-hover transition duration-300 ease-in-out transform hover:scale-105"
@@ -36,15 +36,15 @@ const Footer = () => {
             Contact
           </Link>
           <Link
-            to="/resume"
+            to="/certificates"
             className="link link-hover transition duration-300 ease-in-out transform hover:scale-105"
           >
-            Resume
+           Certificates
           </Link>
         </div>
 
         {/* Social Media Links */}
-        <div className="flex justify-center md:justify-start space-x-4 mt-4 md:mt-0">
+        <div className="flex justify-center items-center gap-4">
           {socialLinks.map((socialLink, index) => (
             <a
               key={index}

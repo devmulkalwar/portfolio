@@ -135,7 +135,7 @@ const Contact = () => {
               required
               className="textarea textarea-bordered resize-none focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
               placeholder="Your Message"
-              rows="4" // Fixed height
+              rows="3" // Fixed height
             />
           </div>
 
