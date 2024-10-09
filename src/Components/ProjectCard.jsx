@@ -1,5 +1,3 @@
-
-
 const ProjectCard = ({
   title,
   description,
@@ -8,7 +6,6 @@ const ProjectCard = ({
   repoLink,
   tags,
 }) => {
-
   const tagColors = {
     Js: "bg-yellow-500 text-white",
     React: "bg-cyan-500 text-white",
@@ -26,31 +23,31 @@ const ProjectCard = ({
   };
 
   const truncatedDescription =
-  description.length > 70
-    ? description.substring(0, 100) + "..."
-    : description;
-  
+    description.length > 70
+      ? description.substring(0, 100) + "..."
+      : description;
+
   return (
-    <div className="bg-base-300 rounded-lg shadow-lg overflow-hidden w-full h-full max-w-xs mx-auto flex flex-col transition-transform transform hover:scale-105">
-      <img src={image} alt={title} className="w-full h-32 object-cover" />
+    <div className="bg-base-100 rounded-lg shadow-lg overflow-hidden w-full h-full max-w-xs mx-auto flex flex-col transition-transform transform hover:scale-105 hover:shadow-2xl">
+      <img src={image} alt={title} className="w-full h-40 p-4 object-cover " />
       <div className="p-4 flex-grow">
-        <h3 className="font-bold text-center text-xl">{title}</h3>
-        <p className="text-gray-600 text-center">{truncatedDescription}</p>
-        <div className="mt-2 flex flex-wrap justify-center">
+        <h3 className="font-bold text-left text-xl mb-2 ">{title}</h3>
+        <p className=" text-justify mb-3">{truncatedDescription}</p>
+        <div className="mt-2 flex flex-wrap justify-start">
           {tags.map((tag, index) => (
             <span
               key={index}
-              className={`${tagColors[tag] || "bg-gray-300 text-black"} badge mr-2 mb-1 rounded-lg`}
+              className={`${tagColors[tag] || "bg-gray-300 text-black"} badge mr-2 mb-1 rounded-lg px-3 py-1 text-xs font-semibold`}
             >
               {tag}
             </span>
           ))}
         </div>
       </div>
-      <div className="flex justify-center mb-4">
+      <div className="flex justify-between mb-4 px-4">
         <a
           href={liveLink}
-          className="btn btn-primary mr-2"
+          className="btn btn-primary flex-1 mr-2 transition-transform duration-200 transform hover:scale-105"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -58,7 +55,7 @@ const ProjectCard = ({
         </a>
         <a
           href={repoLink}
-          className="btn btn-outline btn-success"
+          className="btn btn-outline btn-success flex-1 transition-transform duration-200 transform hover:scale-105"
           target="_blank"
           rel="noopener noreferrer"
         >
