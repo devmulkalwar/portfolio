@@ -1,4 +1,5 @@
 import React from 'react';
+import { FaDownload } from 'react-icons/fa';
 
 const CertificateCard = ({ certificate }) => {
   return (
@@ -14,7 +15,7 @@ const CertificateCard = ({ certificate }) => {
             onClick={() => window.open(certificate.image, '_blank')}
             download
           >
-            Download Certificate
+            Download <FaDownload />
           </button>
         </div>
       </div>

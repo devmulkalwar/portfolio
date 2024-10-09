@@ -2,9 +2,11 @@ import React from "react";
 import mainImage from "../assets/Images/mainImage.png";
 import { Link } from "react-router-dom";
 import ResumeButton from "../Components/ResumeButton";
+import ProjectCarousel from "../Components/ProjectCarousel";
+import SkillCarousel from "../Components/SkillCarousel";
 const Home = () => {
   return (
-    <div className="flex flex-grow bg-base-200 w-full">
+    <div className="flex  flex-grow flex-col items-center justify-center bg-base-200 w-full">
       <div className="hero-content flex-col gap-2 lg:flex-row-reverse w-full mx-auto p-4">
         <img src={mainImage} className=" w-[310px]   " alt="Main Image" />
         <div className="lg:pl-6">
@@ -23,6 +25,14 @@ const Home = () => {
            <ResumeButton styles="btn btn-outline btn-success hover:scale-105 transition-transform" />
           </div>
         </div>
+      </div>
+      <div className="hero-content flex-col w-full m-auto">
+        <h1 className="text-2xl font-bold">Skills </h1>
+      <SkillCarousel/>
+      </div>
+      <div className="hero-content flex-col w-full m-auto">
+        <h1 className="text-2xl font-bold">Projects </h1>
+      <ProjectCarousel/>
       </div>
     </div>
   );
