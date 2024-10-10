@@ -4,20 +4,20 @@ export const projects = [
   {
     title: "Portfolio Website",
     description:
-      "A personal portfolio website showcasing projects and skills, built using React.js and TailwindCSS.",
+      "A personal portfolio website showcasing projects and skills, built using React.js , DaisyUI and TailwindCSS.",
     image: matrixImg,
-    liveLink: "https://portfolio-website-example.com",
-    repoLink: "https://github.com/example/portfolio-website",
+    liveLink: "https://dev-mulkalwar-portfolio.netlify.app/",
+    repoLink: "https://github.com/devmulkalwar/portfolio",
     tags: ["React", "TailwindCSS", "DaisyUI", "Js"],
   },
   {
-    title: "Expense Tracker",
+    title: "Sticky Notes",
     description:
-      "A simple expense tracker built with React.js to track daily, weekly, and monthly expenses, complete with chart visualization.",
+      "Welcome to our Sticky Notes Web App – your digital canvas for organizing thoughts, ideas, and reminders in a simple and intuitive way. ",
     image: matrixImg,
-    liveLink: "https://expense-tracker-example.com",
-    repoLink: "https://github.com/example/expense-tracker",
-    tags: ["React", "Js", "Css"],
+    liveLink: "https://devmulkalwar.github.io/stickynotes/",
+    repoLink: "https://github.com/devmulkalwar/stickynotes",
+    tags: ["Html", "Css", "Js"],
   },
   {
     title: "Matrix Solver",

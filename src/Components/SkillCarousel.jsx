@@ -3,7 +3,7 @@ import { skills } from '../data/skills';
 
 const SkillCarousel = () => {
   return (
-    <div className="carousel carousel-center bg-neutral rounded-box max-w-full space-x-4 mx-4 py-6">
+    <div className="carousel carousel-center bg-neutral rounded-box max-w-full space-x-4 mx-4 py-4 px-4">
       {skills.map((skill, index) => (
         <div className="carousel-item transition-transform transform hover:scale-105" key={index}>
           <div className={`flex flex-col items-center ${skill.bgColor} text-white p-4 rounded-lg shadow-lg w-40`}>

@@ -44,7 +44,6 @@ const Contact = () => {
         () => {
           const successMessage = "Your message has been sent successfully.";
           handleToast(successMessage, "success");
-          // Reset form fields
           setFormData({
             firstName: "",
             lastName: "",
@@ -55,7 +54,6 @@ const Contact = () => {
         (error) => {
           const errorMessage = error?.text || "Error sending message";
           handleToast(errorMessage, "error");
-          // Optional: Reset form fields even on error
           setFormData({
             firstName: "",
             lastName: "",
@@ -73,9 +71,9 @@ const Contact = () => {
           Contact
         </h1>
         <form ref={form} onSubmit={handleSubmit} className="space-y-6">
-          <div className="flex flex-col md:flex-row md:gap-4 mb-4">
+          <div className="flex flex-col lg:flex-row lg:gap-4 lg:mb-4">
             {/* First Name */}
-            <div className="form-control w-full mb-4 md:mb-0">
+            <div className="form-control w-full mb-4 lg:mb-0">
               <label className="label">
                 <span className="label-text">First Name</span>
               </label>
@@ -91,7 +89,7 @@ const Contact = () => {
             </div>
 
             {/* Last Name */}
-            <div className="form-control w-full">
+            <div className="form-control ">
               <label className="label">
                 <span className="label-text">Last Name</span>
               </label>
@@ -135,7 +133,7 @@ const Contact = () => {
               required
               className="textarea textarea-bordered resize-none focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
               placeholder="Your Message"
-              rows="3" // Fixed height
+              rows="3" 
             />
           </div>
 

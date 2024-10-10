@@ -28,8 +28,8 @@ const ProjectCard = ({
       : description;
 
   return (
-    <div className="bg-base-100 rounded-lg shadow-lg overflow-hidden w-full h-full max-w-xs mx-auto flex flex-col transition-transform transform hover:scale-105 hover:shadow-2xl">
-      <img src={image} alt={title} className="w-full h-40 p-4 object-cover " />
+    <div className="bg-base-300 rounded-lg shadow-lg overflow-hidden w-full h-full max-w-xs mx-auto flex flex-col transition-transform transform hover:scale-105 hover:shadow-2xl">
+      <img src={image} alt={title} className="w-full h-60 p-4 object-cover " />
       <div className="p-4 flex-grow">
         <h3 className="font-bold text-left text-xl mb-2 ">{title}</h3>
         <p className=" text-justify mb-3">{truncatedDescription}</p>
