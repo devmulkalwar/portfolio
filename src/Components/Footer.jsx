@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { socialLinks } from "../data/socialLinks"; // Make sure socialLinks is properly defined
+import SocialLinks from "./SocialLinks";
 
 const Footer = () => {
   return (
@@ -45,17 +46,7 @@ const Footer = () => {
 
         {/* Social Media Links */}
         <div className="flex justify-center items-center gap-4">
-          {socialLinks.map((socialLink, index) => (
-            <a
-              key={index}
-              href={socialLink.link}
-              target="_blank"
-              className="text-base-content hover:text-primary transition duration-300 ease-in-out"
-              rel="noopener noreferrer"
-            >
-              <socialLink.icon className="h-6 w-6" />
-            </a>
-          ))}
+          <SocialLinks/>
         </div>
       </div>
 
