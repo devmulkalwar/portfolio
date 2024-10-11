@@ -5,6 +5,7 @@ import { SiBootstrap, SiGit, SiGithub, SiExpress, SiNodedotjs, SiMongodb, SiFire
 import { Link } from 'react-router-dom';
 import {skills} from "../data/skills.js"
 import ResumeButton from '../Components/ResumeButton.jsx';
+import { socialLinks } from '../data/socialLinks.js';
 
 const About = () => {
   return (
@@ -22,6 +23,19 @@ const About = () => {
           <p className="py-6 text-base-content text-justify leading-relaxed">
           I am a passionate MCA student and web developer specializing in creating modern and responsive web applications. With a strong background in both front-end and back-end technologies, I thrive on transforming innovative ideas into reality. My academic journey has equipped me with a solid understanding of software development principles, and I am committed to delivering high-quality solutions that enhance user experiences.
           </p>
+          <div className="flex justify-start items-center gap-4">
+          {socialLinks.map((socialLink, index) => (
+            <a
+              key={index}
+              href={socialLink.link}
+              target="_blank"
+              className="text-base-content hover:text-primary transition duration-300 ease-in-out"
+              rel="noopener noreferrer"
+            >
+              <socialLink.icon className="h-6 w-6" />
+            </a>
+          ))}
+        </div>
           <div className="flex gap-4 mt-6">
            <ResumeButton styles="btn btn-primary shadow-lg hover:scale-105 transition-transform"/>
             <Link
@@ -41,7 +55,7 @@ const About = () => {
         {skills.map((skill, index) => (
           <div
             key={index}
-            className={`flex place-self-center items-center justify-center w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 text-white ${skill.bgColor} rounded-full shadow-lg`}
+            className={`flex place-self-center items-center justify-center w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 text-white ${skill.bgColor} rounded-full shadow-lg hover:scale-105`}
           >
             <div className="text-xl md:text-2xl lg:text-3xl">
            < skill.icon className="h-6 w-6 md:h-8 md:w-8 lg:h-10 lg:w-10"/>

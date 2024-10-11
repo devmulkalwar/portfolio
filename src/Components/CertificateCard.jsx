@@ -3,7 +3,7 @@ import { FaDownload } from 'react-icons/fa';
 
 const CertificateCard = ({ certificate }) => {
   return (
-    <div className="card w-full bg-base-200 shadow-xl">
+    <div className="bg-base-300 rounded-lg shadow-lg overflow-hidden w-full h-full max-w-xs mx-auto flex flex-col transition-transform transform hover:scale-105 hover:shadow-2xl">
       <figure>
         <img className="h-48 object-cover w-full" src={certificate.image} alt={certificate.name} />
       </figure>

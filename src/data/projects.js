@@ -1,20 +1,26 @@
-import matrixImg from "../assets/Images/matrixSolverImage.png";
+import matrixImg from "../assets/Images/matrixSolverImage.png"; 
+import rockPaperImg from "../assets/Images/rockPaperImage.png"; 
+import stickyNotesImg from "../assets/Images/stickyNotes.png"; 
+import speakGenieImg from "../assets/Images/speakGenie.png"; 
+import todoImg from "../assets/Images/todoApp.png"; 
+import ticTacToeImg from "../assets/Images/ticTacToe.png";
+import porfolioImg from "../assets/Images/portfolioImage.png"; 
 
 export const projects = [
   {
     title: "Portfolio Website",
     description:
-      "A personal portfolio website showcasing projects and skills, built using React.js , DaisyUI and TailwindCSS.",
-    image: matrixImg,
+      "A personal portfolio website showcasing projects and skills, built using React.js, DaisyUI, and TailwindCSS.",
+    image: porfolioImg,
     liveLink: "https://dev-mulkalwar-portfolio.netlify.app/",
     repoLink: "https://github.com/devmulkalwar/portfolio",
-    tags: ["React", "TailwindCSS", "DaisyUI", "Js"],
+    tags: ["React", "TailwindCSS", "DaisyUI", "JS"],
   },
   {
     title: "Sticky Notes",
     description:
-      "Welcome to our Sticky Notes Web App – your digital canvas for organizing thoughts, ideas, and reminders in a simple and intuitive way. ",
-    image: matrixImg,
+      "Welcome to our Sticky Notes Web App – your digital canvas for organizing thoughts, ideas, and reminders in a simple and intuitive way.",
+    image: stickyNotesImg,
     liveLink: "https://devmulkalwar.github.io/stickynotes/",
     repoLink: "https://github.com/devmulkalwar/stickynotes",
     tags: ["Html", "Css", "Js"],
@@ -32,63 +38,36 @@ export const projects = [
     title: "Rock Paper Scissors",
     description:
       "A beginner-friendly project that brings the classic game to life with the simplicity of HTML, CSS, and JavaScript.",
-    image: matrixImg,
+    image: rockPaperImg,
     liveLink: "https://devmulkalwar.github.io/rock-paper-scissors/",
     repoLink: "https://github.com/devmulkalwar/rock-paper-scissors",
     tags: ["Html", "Css", "Js"],
   },
   {
-    title: "E-Commerce Store",
+    title: "Tic Tac Toe",
     description:
-      "A fully functional e-commerce web app built with React.js that includes product listings, a shopping cart, and checkout functionality.",
-    image: matrixImg,
-    liveLink: "https://ecommerce-store-example.com",
-    repoLink: "https://github.com/example/ecommerce-store",
-    tags: ["React", "Css", "Js", "Api"],
+      "This Tic Tac Toe game, built with HTML, CSS, and JavaScript, offers Vs Human and Vs Bot modes with random bot moves.",
+    image: ticTacToeImg,
+    liveLink: "https://devmulkalwar.github.io/tic-tac-toe/",
+    repoLink: "https://github.com/devmulkalwar/tic-tac-toe",
+    tags: ["Html", "Css", "Js"],
   },
   {
-    title: "Weather Dashboard",
+    title: "Speak Genie",
     description:
-      "A React.js app that fetches weather data from an API and displays current and forecasted weather for any location.",
-    image: matrixImg,
-    liveLink: "https://weather-dashboard-example.com",
-    repoLink: "https://github.com/example/weather-dashboard",
-    tags: ["React", "Api", "Js", "Css"],
+      "SpeakGenie is an innovative platform designed to seamlessly convert audio input into text and transform that text back into audio.",
+    image: speakGenieImg,
+    liveLink: "https://speak-genie.netlify.app/",
+    repoLink: "https://github.com/devmulkalwar/Speak-Genie",
+    tags: ["React", "Tailwind", "DaisyUI", "Js"],
   },
   {
-    title: "Chat Application",
+    title: "Todo App",
     description:
-      "A real-time chat application built using React.js and Firebase, allowing users to send and receive messages instantly.",
-    image: matrixImg,
-    liveLink: "https://chat-app-example.com",
-    repoLink: "https://github.com/example/chat-app",
-    tags: ["React", "Firebase", "Js", "Css"],
-  },
-  {
-    title: "Todo App with Authentication",
-    description:
-      "A task management app built with React.js and Firebase authentication that allows users to manage their tasks after signing in.",
-    image: matrixImg,
-    liveLink: "https://todo-app-example.com",
-    repoLink: "https://github.com/example/todo-app",
-    tags: ["React", "Firebase", "Auth", "Js"],
-  },
-  {
-    title: "Blog Application",
-    description:
-      "A full-stack blog application using MongoDB, Express, React, and Node.js (MERN) where users can create, edit, and delete blog posts.",
-    image: matrixImg,
-    liveLink: "https://mern-blog-app-example.com",
-    repoLink: "https://github.com/example/mern-blog-app",
-    tags: ["Mongodb", "Express", "React", "NodeJs"],
-  },
-  {
-    title: "Social Media App",
-    description:
-      "A social media platform built with the MERN stack, allowing users to post updates, like, comment, and follow other users.",
-    image: matrixImg,
-    liveLink: "https://mern-social-media-app-example.com",
-    repoLink: "https://github.com/example/mern-social-media-app",
-    tags: ["Mongodb", "Express", "React", "NodeJs"],
+      "This is a basic ToDo app made with simple web technologies like HTML, CSS, and JavaScript. It helps you keep track of your tasks easily.",
+    image: todoImg,
+    liveLink: "https://devmulkalwar.github.io/to-do-list/",
+    repoLink: "https://github.com/devmulkalwar/to-do-list",
+    tags: ["Html", "Css", "Js", "LocalStorage"],
   },
 ];
