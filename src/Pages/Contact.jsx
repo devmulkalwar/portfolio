@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import emailjs from "emailjs-com"; // Import EmailJS
 import { toast } from "react-toastify";
+import { FaSpinner } from "react-icons/fa"; // Import the spinner icon from react-icons
 
 const Contact = () => {
   const form = useRef();
@@ -10,6 +11,7 @@ const Contact = () => {
     email: "",
     message: "",
   });
+  const [isLoading, setIsLoading] = useState(false); // Loading state
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -30,9 +32,10 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setIsLoading(true); // Set loading state to true
 
     emailjs.init(import.meta.env.VITE_EMAIL_PRIVATE_KEY);
-    
+
     emailjs
       .sendForm(
         import.meta.env.VITE_EMAIL_SERVICE_ID,
@@ -44,6 +47,7 @@ const Contact = () => {
         () => {
           const successMessage = "Your message has been sent successfully.";
           handleToast(successMessage, "success");
+          setIsLoading(false); // Reset loading state
           setFormData({
             firstName: "",
             lastName: "",
@@ -54,6 +58,7 @@ const Contact = () => {
         (error) => {
           const errorMessage = error?.text || "Error sending message";
           handleToast(errorMessage, "error");
+          setIsLoading(false); // Reset loading state
           setFormData({
             firstName: "",
             lastName: "",
@@ -85,6 +90,7 @@ const Contact = () => {
                 required
                 className="input input-bordered focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
                 placeholder="First Name"
+                disabled={isLoading} // Disable while loading
               />
             </div>
 
@@ -101,6 +107,7 @@ const Contact = () => {
                 required
                 className="input input-bordered focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
                 placeholder="Last Name"
+                disabled={isLoading} // Disable while loading
               />
             </div>
           </div>
@@ -118,6 +125,7 @@ const Contact = () => {
               required
               className="input input-bordered focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
               placeholder="Your Email"
+              disabled={isLoading} // Disable while loading
             />
           </div>
 
@@ -133,16 +141,25 @@ const Contact = () => {
               required
               className="textarea textarea-bordered resize-none focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
               placeholder="Your Message"
-              rows="3" 
+              rows="3"
+              disabled={isLoading} // Disable while loading
             />
           </div>
 
-          {/* Submit Button */}
+          {/* Submit Button with Spinner */}
           <button
             type="submit"
-            className="btn btn-primary w-full hover:scale-105 transform transition-transform duration-200 ease-in-out"
+            className="btn btn-primary w-full hover:scale-105 transform transition-transform duration-200 ease-in-out flex justify-center items-center"
+            disabled={isLoading} // Disable the button while loading
           >
-            Send Message
+            {isLoading ? (
+              <>
+                <FaSpinner className="animate-spin h-5 w-5 mr-3" />
+                Sending...
+              </>
+            ) : (
+              "Send Message"
+            )}
           </button>
         </form>
       </div>

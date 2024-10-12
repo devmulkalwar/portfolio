@@ -51,7 +51,7 @@ const Header = () => {
       <div className="navbar-end">
         <ThemeButton />
 
-        <div className="btn btn-ghost btn-circle avatar">
+        <div className="m-1 avatar">
           <div className="w-8 rounded-full">
             <img alt="Profile" src={profile} />
           </div>
