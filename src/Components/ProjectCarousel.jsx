@@ -1,13 +1,15 @@
-import React from 'react';
-import { projects } from '../data/projects';
-import ProjectCard from './ProjectCard';
+import React from "react";
+import { projects } from "../data/projects";
+import ProjectCard from "./ProjectCard";
 
 const ProjectCarousel = () => {
   return (
-    <div className="carousel carousel-center bg-neutral rounded-box max-w-full space-x-4 px-4 py-6"> {/* Added mx-4 for horizontal margin */}
+    <div className="carousel carousel-center bg-neutral rounded-box max-w-full space-x-4 px-4 py-6">
+     
       {projects.map((project, index) => (
-        <div className="carousel-item" key={index}>
+        
           <ProjectCard
+            key={index}
             title={project.title}
             description={project.description}
             image={project.image}
@@ -15,7 +17,7 @@ const ProjectCarousel = () => {
             repoLink={project.repoLink}
             tags={project.tags}
           />
-        </div>
+       
       ))}
     </div>
   );
