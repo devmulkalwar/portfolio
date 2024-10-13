@@ -1,10 +1,32 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 const ThemeButton = () => {
+  // State to track the current theme
+  const [isDarkTheme, setIsDarkTheme] = useState(false);
+
+  // Toggles theme when checkbox is clicked
+  const toggleTheme = () => {
+    setIsDarkTheme(!isDarkTheme);
+  };
+
+  // Apply theme on state change
+  useEffect(() => {
+    if (isDarkTheme) {
+      document.documentElement.setAttribute("data-theme", "dark");
+    } else {
+      document.documentElement.setAttribute("data-theme", "light");
+    }
+  }, [isDarkTheme]);
+
   return (
     <label className="swap swap-rotate btn btn-ghost btn-circle">
       {/* this hidden checkbox controls the state */}
-      <input type="checkbox" className="theme-controller"/>
+      <input
+        type="checkbox"
+        className="theme-controller"
+        checked={isDarkTheme}
+        onChange={toggleTheme}
+      />
 
       {/* sun icon */}
       <svg
