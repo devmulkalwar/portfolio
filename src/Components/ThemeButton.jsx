@@ -4,7 +4,7 @@ const ThemeButton = () => {
   return (
     <label className="swap swap-rotate btn btn-ghost btn-circle">
       {/* this hidden checkbox controls the state */}
-      <input type="checkbox" className="theme-controller"               value="light" />
+      <input type="checkbox" className="theme-controller"/>
 
       {/* sun icon */}
       <svg
