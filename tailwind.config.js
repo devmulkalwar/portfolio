@@ -10,7 +10,6 @@ export default {
   daisyui: {
     themes:false, // Array of themes to use
     darkTheme: "dark", // Dark theme to use
-    lightTheme: "light", // Light theme to use
     base: true, // Applies background color and foreground color for root element by default
     styled: true, // Include daisyUI colors and design decisions for all components
     utils: true, // Adds responsive and modifier utility classes
